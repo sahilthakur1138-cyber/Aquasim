@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estimate your daily household water use and compare it with the 15-litre refugee-camp survival allowance.">
+  <title>AquaSim | Water Footprint Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <h1>💧 AquaSim</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="analyzer.html" aria-current="page">Analyzer</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="crisis-map.html">Crisis Map</a></li>
+        <li><a href="classroom.html">Classroom</a></li>
+        <li><a href="data-vault.html">Data Vault</a></li>
+        <li><a href="about.html">About</a></li>
+        <link rel="stylesheet" href="style.css">
+      </ul>
+    </nav>
+  </header>
+
+  <hr>
+
+  <main id="main">
+    <h2>Water Footprint Waste Analyzer</h2>
+    <p>Set each slider to describe a typical day for <strong>one person</strong>, then use the reference table below to turn your settings into litres. This page uses only native HTML, so it cannot add the numbers up for you; the table and the worked example show how to do it in a minute.</p>
+
+    <section aria-labelledby="inputs">
+      <h3 id="inputs">Step 1: Describe your day</h3>
+      <form id="water-analyzer">
+        <fieldset>
+          <legend>Daily household actions (per person)</legend>
+
+          <p>
+            <label for="shower">Shower duration (minutes, 0 to 30)</label><br>
+            <input type="range" id="shower" name="shower" min="0" max="30" step="1" value="8" list="ticks-30">
+          </p>
+
+          <p>
+            <label for="brushing">Minutes the tap runs while brushing teeth (0 to 10)</label><br>
+            <input type="range" id="brushing" name="brushing" min="0" max="10" step="1" value="2" list="ticks-10">
+          </p>
+
+          <p>
+            <label for="flushes">Toilet flushes per day (0 to 15)</label><br>
+            <input type="range" id="flushes" name="flushes" min="0" max="15" step="1" value="5" list="ticks-15">
+          </p>
+
+          <p>
+            <label for="laundry">Laundry cycles per week (0 to 14)</label><br>
+            <input type="range" id="laundry" name="laundry" min="0" max="14" step="1" value="3" list="ticks-14">
+          </p>
+
+          <p>
+            <label for="dishes">Minutes of running tap while washing dishes (0 to 30)</label><br>
+            <input type="range" id="dishes" name="dishes" min="0" max="30" step="1" value="5" list="ticks-30">
+          </p>
+
+          <datalist id="ticks-30">
+            <option value="0"></option><option value="10"></option><option value="20"></option><option value="30"></option>
+          </datalist>
+          <datalist id="ticks-10">
+            <option value="0"></option><option value="5"></option><option value="10"></option>
+          </datalist>
+          <datalist id="ticks-15">
+            <option value="0"></option><option value="5"></option><option value="10"></option><option value="15"></option>
+          </datalist>
+          <datalist id="ticks-14">
+            <option value="0"></option><option value="7"></option><option value="14"></option>
+          </datalist>
+        </fieldset>
+
+        <p>
+          <button type="submit">Jump to comparison</button>
+          <button type="reset">Reset sliders</button>
+        </p>
+      </form>
+    </section>
+
+    <hr>
+
+    <section aria-labelledby="reference">
+      <h3 id="reference">Step 2: Convert settings to litres</h3>
+      <table>
+        <caption>Typical water use per action (approximate averages)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Action</th>
+            <th scope="col">Typical flow or volume</th>
+            <th scope="col">Formula for one person per day</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Shower</th><td>About 9 L per minute</td><td>minutes &times; 9</td></tr>
+          <tr><th scope="row">Tap running while brushing</th><td>About 6 L per minute</td><td>minutes &times; 6</td></tr>
+          <tr><th scope="row">Toilet flush</th><td>About 6 L per flush</td><td>flushes &times; 6</td></tr>
+          <tr><th scope="row">Laundry cycle</th><td>About 50 L per cycle</td><td>(cycles per week &times; 50) &divide; 7</td></tr>
+          <tr><th scope="row">Dishes under a running tap</th><td>About 8 L per minute</td><td>minutes &times; 8</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Worked example with the default slider values</h4>
+      <ol>
+        <li>Shower: 8 &times; 9 = 72 L</li>
+        <li>Brushing: 2 &times; 6 = 12 L</li>
+        <li>Flushes: 5 &times; 6 = 30 L</li>
+        <li>Laundry: (3 &times; 50) &divide; 7 &approx; 21 L</li>
+        <li>Dishes: 5 &times; 8 = 40 L</li>
+      </ol>
+      <p><strong>Total &approx; 175 L per person per day</strong>, and that counts only these five actions, not drinking, cooking or cleaning.</p>
+    </section>
+
+    <hr>
+
+    <section id="comparison" aria-labelledby="compare-heading">
+      <h3 id="compare-heading">Step 3: Compare with a refugee-camp allowance</h3>
+      <div class="result-panel"><p class="eyebrow">Your estimated daily use</p><p id="total-litres" class="big-number">175 L</p><progress id="user-progress" max="250" value="175"></progress></div>
+      <p>Humanitarian guidance (the Sphere standard) sets a minimum of <strong>15 litres per person per day</strong> for drinking, cooking and basic hygiene in emergency camps. The bars below show the worked example above against that allowance. The scale runs from 0 to 200 L.</p>
+
+      <p>
+        <label for="bar-camp">Climate refugee camp allowance: 15 L</label><br>
+        <progress id="bar-camp" max="200" value="15">15 L</progress> 15 L
+      </p>
+
+      <p>
+        <label for="bar-shower">Example household: shower only, 72 L</label><br>
+        <progress id="bar-shower" max="200" value="72">72 L</progress> 72 L
+      </p>
+
+      <p>
+        <label for="bar-flush">Example household: toilet flushes only, 30 L</label><br>
+        <progress id="bar-flush" max="200" value="30">30 L</progress> 30 L
+      </p>
+
+      <p>
+        <label for="bar-total">Example household: all five actions, about 175 L</label><br>
+        <progress id="bar-total" max="200" value="175">175 L</progress> 175 L
+      </p>
+
+      <p>In this example, the shower alone uses nearly five times a camp resident's entire day of water, and the five actions together use more than eleven times that allowance.</p>
+
+      <p>Next: see <a href="solutions.html">how to fix everyday waste</a> or check the <a href="data-vault.html">hidden water in what we buy</a>.</p>
+    </section>
+  </main>
+
+  <hr>
+
+  <footer>
+    <p>Flow rates vary by fixture and region. Measure your own with a bucket and a timer for better accuracy.</p>
+  </footer>
+</body>
+</html>
+
+
+

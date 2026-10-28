@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About AquaSim: background, open-source principles, development philosophy and a community feedback form.">
+  <title>AquaSim | About &amp; Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <h1>💧 AquaSim</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="analyzer.html">Analyzer</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="crisis-map.html">Crisis Map</a></li>
+        <li><a href="classroom.html">Classroom</a></li>
+        <li><a href="data-vault.html">Data Vault</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <link rel="stylesheet" href="style.css">
+      </ul>
+    </nav>
+  </header>
+
+  <hr>
+
+  <main id="main">
+    <h2>Open Source Project Manifest &amp; Contact</h2>
+
+    <section aria-labelledby="background">
+      <h3 id="background">Project background</h3>
+      <p>AquaSim began as an educational project to make global water stress understandable through everyday behaviour. It compares ordinary household use with the strict daily allowance available in emergency camps, so the scale of the gap becomes concrete.</p>
+    </section>
+
+    <section aria-labelledby="principles">
+      <h3 id="principles">Open-source principles</h3>
+      <ul>
+        <li><strong>Transparent:</strong> every page is readable source, so anyone can inspect how it works.</li>
+        <li><strong>Free to reuse:</strong> teachers and students may copy, adapt and share the content for educational use.</li>
+        <li><strong>Community-driven:</strong> corrections, translations and new data are welcome.</li>
+        <li><strong>Honest about uncertainty:</strong> figures are labelled as approximate and sources are named.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="philosophy">
+      <h3 id="philosophy">Development philosophy</h3>
+      <ol>
+        <li><strong>Semantic first:</strong> meaningful HTML elements give structure to browsers and assistive technology alike.</li>
+        <li><strong>Accessible by default:</strong> labels for every control, a skip link and keyboard-friendly navigation.</li>
+        <li><strong>Minimal dependencies:</strong> no frameworks, styles or scripts to maintain, and no tracking.</li>
+        <li><strong>Works anywhere:</strong> pages open locally from a folder, with or without internet.</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section aria-labelledby="contact">
+      <h3 id="contact">Community feedback</h3>
+      <p>Found an error or have an idea? Tell us below. This form opens your email app, so a mail program must be set up on your device. Replace the placeholder address in the form's <code>action</code> attribute with your project's real contact address before publishing.</p>
+
+      <form action="mailto:sahil.thakur@gmail.com" method="get" enctype="text/plain">
+        <fieldset>
+          <legend>Send feedback</legend>
+
+          <p>
+            <label for="name">Your name</label><br>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </p>
+
+          <p>
+            <label for="email">Your email address</label><br>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </p>
+
+          <p>
+            <label for="message">Your message</label><br>
+            <textarea id="message" name="message" rows="6" cols="50" required></textarea>
+          </p>
+
+          <p>
+            <button type="submit">Send feedback</button>
+            <button type="reset">Clear form</button>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <hr>
+
+  <footer>
+    <p>Thank you for helping people see the water behind everyday life. <a href="Home.html">Back to Home</a></p>
+  </footer>
+</body>
+</html>
+
+

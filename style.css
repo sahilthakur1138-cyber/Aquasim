@@ -1,0 +1,628 @@
+/* ==========================================================
+   AquaSim - style.css
+   Colours used:
+   dark blue  #075985
+   blue       #0ea5e9
+   light blue #e0f2fe
+   teal       #0f766e
+   text       #1f2937
+   white      #ffffff
+   ========================================================== */
+
+
+/* 1. BODY: page background, font and text colour ---------- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e0f2fe;
+  color: #1f2937;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+/* 2. SKIP LINK: hidden until you press Tab ---------------- */
+a[href="#main"] {
+  position: absolute;
+  left: -9999px;
+}
+
+a[href="#main"]:focus {
+  left: 10px;
+  top: 10px;
+  background-color: #ffffff;
+  color: #075985;
+  padding: 10px 16px;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+
+/* 3. HEADER: dark blue bar at the top --------------------- */
+header {
+  background-color: #075985;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 6px solid #0ea5e9;
+}
+
+header p {
+  margin: 4px 0 0 0;
+  color: #e0f2fe;
+}
+
+
+/* 4. HEADINGS --------------------------------------------- */
+h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  color: #ffffff;           /* h1 sits inside the dark header */
+}
+
+h2 {
+  font-size: 2rem;
+  color: #075985;
+  border-bottom: 4px solid #0ea5e9;
+  padding-bottom: 8px;
+  margin-top: 10px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #0f766e;
+  margin-top: 0;
+}
+
+h4 {
+  color: #075985;
+  margin-bottom: 6px;
+}
+
+
+/* 5. NAVIGATION MENU -------------------------------------- */
+nav ul {
+  list-style: none;          /* remove bullet points */
+  margin: 16px 0 0 0;
+  padding: 0;
+  display: flex;             /* put the links in one row */
+  flex-wrap: wrap;           /* wrap to a new line on small screens */
+  justify-content: center;
+  gap: 8px;
+}
+
+nav a {
+  display: block;
+  padding: 8px 16px;
+  color: #ffffff;
+  background-color: #0ea5e9;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Hover and keyboard focus effect */
+nav a:hover,
+nav a:focus {
+  background-color: #e0f2fe;
+  color: #075985;
+}
+
+/* The page you are currently on */
+nav a[aria-current="page"] {
+  background-color: #0f766e;
+  color: #ffffff;
+}
+
+
+/* 6. MAIN CONTENT AREA ------------------------------------ */
+main {
+  max-width: 900px;          /* keeps lines easy to read */
+  margin: 0 auto;            /* centres the content */
+  padding: 20px;
+}
+
+/* Thin divider lines between parts of the page */
+hr {
+  border: none;
+  border-top: 2px solid #0ea5e9;
+  margin: 0;
+  opacity: 0.3;
+}
+
+header + hr {
+  display: none;             /* the header already has its own border */
+}
+
+
+/* 7. SECTIONS AS CARDS ------------------------------------ */
+main section {
+  background-color: #ffffff;
+  border: 1px solid #e0f2fe;
+  border-left: 6px solid #0ea5e9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 6px rgba(7, 89, 133, 0.15);
+}
+
+/* Lists inside cards */
+ul, ol {
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+/* Small extras */
+code {
+  background-color: #e0f2fe;
+  color: #075985;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+blockquote {
+  margin: 16px 0;
+  padding: 10px 20px;
+  background-color: #e0f2fe;
+  border-left: 5px solid #0f766e;
+  border-radius: 6px;
+  font-style: italic;
+}
+
+blockquote p {
+  margin: 0 0 6px 0;
+}
+
+blockquote footer {
+  font-size: 0.9rem;
+  font-style: normal;
+}
+
+dt {
+  font-weight: bold;
+  color: #075985;
+  margin-top: 10px;
+}
+
+dd {
+  margin-left: 20px;
+}
+
+details {
+  background-color: #e0f2fe;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #075985;
+}
+
+
+/* 8. LINKS ------------------------------------------------ */
+a {
+  color: #075985;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #0f766e;
+}
+
+a:focus {
+  outline: 3px solid #0ea5e9;
+}
+
+
+/* 9. TABLES ----------------------------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;  /* joins the borders together */
+  margin: 16px 0;
+  background-color: #ffffff;
+}
+
+caption {
+  font-weight: bold;
+  color: #075985;
+  text-align: left;
+  padding-bottom: 8px;
+}
+
+th, td {
+  border: 1px solid #0ea5e9;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Column headings (top row) */
+thead th {
+  background-color: #075985;
+  color: #ffffff;
+}
+
+/* Row headings (first cell in each row) */
+tbody th {
+  background-color: #e0f2fe;
+  color: #075985;
+}
+
+/* Every second row is light blue */
+tbody tr:nth-child(even) td {
+  background-color: #f0f9ff;
+}
+
+/* Row highlight when the mouse is over it */
+tbody tr:hover td {
+  background-color: #e0f2fe;
+}
+
+
+/* 10. FORMS, BUTTONS AND QUIZ CONTROLS -------------------- */
+fieldset {
+  border: 2px solid #0ea5e9;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 16px 0;
+}
+
+legend {
+  font-weight: bold;
+  color: #075985;
+  padding: 0 8px;
+}
+
+label {
+  font-weight: bold;
+  color: #1f2937;
+}
+
+/* Text boxes, email box and message box */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;     /* padding stays inside the width */
+  padding: 10px;
+  margin-top: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 2px solid #0ea5e9;
+  border-radius: 6px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0f766e;
+  background-color: #e0f2fe;
+}
+
+/* Sliders, radio buttons and checkboxes take the teal colour */
+input[type="range"] {
+  width: 100%;
+  max-width: 400px;
+  accent-color: #0f766e;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #0f766e;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+/* Quiz answer labels are normal weight so they are easy to read */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  font-weight: normal;
+}
+
+/* All buttons */
+button {
+  background-color: #075985;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: #0f766e;
+}
+
+/* Reset / Clear buttons look lighter */
+button[type="reset"] {
+  background-color: #ffffff;
+  color: #075985;
+  border: 2px solid #075985;
+}
+
+button[type="reset"]:hover,
+button[type="reset"]:focus {
+  background-color: #e0f2fe;
+  color: #0f766e;
+  border-color: #0f766e;
+}
+
+
+/* 11. PROGRESS BARS --------------------------------------- */
+progress {
+  width: 100%;
+  max-width: 400px;
+  height: 22px;
+  vertical-align: middle;
+  -webkit-appearance: none;   /* lets us style it in Chrome/Safari */
+  appearance: none;
+  border: none;
+}
+
+/* The empty track (Chrome, Edge, Safari) */
+progress::-webkit-progress-bar {
+  background-color: #e0f2fe;
+  border: 1px solid #0ea5e9;
+  border-radius: 12px;
+}
+
+/* The filled part (Chrome, Edge, Safari) */
+progress::-webkit-progress-value {
+  background-color: #0ea5e9;
+  border-radius: 12px;
+}
+
+/* The filled part (Firefox) */
+progress::-moz-progress-bar {
+  background-color: #0ea5e9;
+  border-radius: 12px;
+}
+
+
+/* 12. FOOTER (the one at the bottom of each page) --------- */
+body > footer {
+  background-color: #075985;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  border-top: 6px solid #0ea5e9;
+}
+
+body > footer a {
+  color: #e0f2fe;
+}
+
+body > footer a:hover {
+  color: #ffffff;
+}
+
+/* Hide the divider line right before the footer */
+main + hr {
+  display: none;
+}
+
+
+/* 13. SMALL SCREENS (phones) ------------------------------ */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  main section {
+    padding: 14px;
+  }
+
+  /* Lets wide tables scroll sideways instead of breaking the page */
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* HERO IMAGE (Home page picture) */
+.hero-image {
+  display: block;                       /* lets the image be centred */
+  max-width: 100%;                      /* never wider than its container */
+  height: auto;                         /* keeps the picture's proportions */
+  margin: 20px auto;                    /* centres it with space above and below */
+  border: 4px solid #e0f2fe;            /* light blue border */
+  border-radius: 16px;                  /* rounded corners */
+  box-shadow: 0 4px 12px rgba(7, 89, 133, 0.25);  /* soft dark-blue shadow */
+}
+/* IMPROVED TABLES */
+table {
+  width: 100%;
+  border-collapse: collapse;          /* joins cell borders into single lines */
+  margin: 16px 0;
+  background-color: #ffffff;
+  color: #1f2937;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 2px solid #075985;          /* dark blue outer border */
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #075985;
+  padding: 0 0 10px 0;
+}
+
+th,
+td {
+  border: 1px solid #0ea5e9;          /* blue lines between cells */
+  padding: 12px 14px;                 /* space inside each cell */
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Dark blue column headings */
+thead th {
+  background-color: #075985;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Row headings (first cell of each row) */
+tbody th {
+  background-color: #e0f2fe;
+  color: #075985;
+  font-weight: bold;
+}
+
+/* Alternate rows in light blue (every second row) */
+tbody tr:nth-child(even) td {
+  background-color: #e0f2fe;
+}
+
+/* Odd rows stay white */
+tbody tr:nth-child(odd) td {
+  background-color: #ffffff;
+}
+
+/* ANALYZER PAGE: LABELS, CONTROLS, BUTTONS, PROGRESS BARS */
+
+/* Labels */
+label {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #075985;
+}
+
+/* Sliders */
+input[type="range"] {
+  width: 100%;
+  max-width: 420px;
+  height: 8px;
+  margin: 8px 0 12px 0;
+  accent-color: #0ea5e9;              /* water-blue slider */
+  cursor: pointer;
+}
+
+/* Fieldset box around the sliders */
+fieldset {
+  background-color: #f0f9ff;
+  border: 2px solid #0ea5e9;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+legend {
+  background-color: #0f766e;
+  color: #ffffff;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Buttons */
+button {
+  background-color: #0ea5e9;
+  color: #ffffff;
+  border: 2px solid #0ea5e9;
+  border-radius: 25px;                /* pill shape, like a water drop */
+  padding: 10px 24px;
+  margin: 4px 8px 4px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* QUIZ: QUESTIONS, RADIO BUTTONS, CHECKBOXES, ANSWER SECTION */
+
+/* Each quiz question is a fieldset box */
+fieldset {
+  background-color: #f0f9ff;
+  border: 2px solid #0ea5e9;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+/* The question text (legend) */
+legend {
+  background-color: #075985;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+/* Each answer option sits on its own row */
+fieldset p {
+  margin: 8px 0;
+}
+
+/* Radio buttons and checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  accent-color: #0f766e;              /* teal when selected */
+  cursor: pointer;
+}
+
+/* Answer text next to the buttons */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  font-weight: normal;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+/* Highlight the answer text when you hover over it */
+input[type="radio"] + label:hover,
+input[type="checkbox"] + label:hover {
+  color: #0f766e;
+}
+
+/* Show a clear outline when using the keyboard */
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* TEACHER ANSWER SECTION */
+#answers {
+  border-left: 6px solid #0f766e;     /* teal edge to set it apart */
+}
+
+details {
+  background-color: #e0f2fe;
+  border: 2px solid #0ea5e9;
+  border-radius: 10px;
+  padding: 12px 16px;
+}:root{--navy:#073b5c;--blue:#1597d3;--mint:#0b8276}body{background:linear-gradient(160deg,#ecfaff,#dff3fc,#f7fcff)}header{background:radial-gradient(circle at 15% 0,#148ec8,#075985 38%,#073b5c);padding:28px 20px 24px}main{max-width:1050px}main>h2{font-size:clamp(2rem,4vw,3.1rem);border:0}main section{border:1px solid #ccebf7;border-left:0;border-radius:18px;box-shadow:0 12px 28px #0759851a;padding:clamp(20px,4vw,34px)}.result-panel{background:linear-gradient(135deg,#073b5c,#087f9d);color:#fff;padding:28px;border-radius:16px;margin:20px 0}.big-number{margin:0;font-size:clamp(3rem,8vw,5.5rem);font-weight:800}.eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;font-weight:bold;color:#a7f3e8}.quiz-result{background:#e8fff8;border-left:5px solid var(--mint);padding:14px 18px;border-radius:8px;font-weight:700}.is-correct{border-color:#0b8276!important;background:#e9fcf7!important}.is-incorrect{border-color:#dd6b20!important;background:#fff5e9!important}
